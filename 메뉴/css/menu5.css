@@ -1,0 +1,66 @@
+@import url(common.css);
+
+#nav{
+	width: 100%;
+	height: 50px;
+	background: #333;
+	border-top: 5px  solid #ccc;
+	text-align: center;
+	/*자식을 float로 배열한 경우는 상위부모에 "text-align:center;"속성이 적용되지 않음
+	->해결:ul을 "display:inline-block;"속성을 사용하여 바꾼다.*/
+}
+
+
+/*주메뉴*/
+
+/*후손선택자를 사용하면 서브메뉴까지 모두 적용이 됨
+해결->주메뉴만 적용하기 위해 자손선택자(">") 사용*/
+#nav>.gnb{display: inline-block;}
+#nav>.gnb>li{
+	float: left;
+	width: 180px;
+	height: 50px;
+	border-right: 1px solid rgba(255,255,255,0.1);
+	color: #ccc;
+	transition: all 0.5s ease-out;
+}
+#nav>.gnb>li:first-child{border-left: 1px solid rgba(255,255,255,0.1);}
+#nav>.gnb>li>a{
+	font-size: 16px;
+	line-height: 50px;  /*수직정렬 가운데*/
+}
+
+#nav>.gnb>li:hover{/*li에 hover를 적용해야 주메뉴의 현재 위치 활성화가 가능함->서븜뉴로 마우스가 내려가도 주메뉴의 오버가 활성화되어 있음*/
+	background: #96c444;
+	color: #333;
+	font-weight: bold;
+}
+
+/*서브메뉴*/
+
+.dropsub{
+	width: 180px;
+	height: 0;
+	background: #333;
+	overflow: hidden;
+	transition: height 0.5s ease-in;
+}
+
+.dropsub li{border-bottom: 1px solid rgba(255,255,255,0.1);}
+.dropsub li: last-child{border-bottom: 0;}
+
+.dropmenu:hover .dropsub{height: 150px;}
+.dropmenu:hover .dropsubTwo{height: 200px;}
+.dropmenu:hover .dropsubThree{height: 100px;}
+.dropmenu:hover .dropsubFour{height: 200px;}
+
+.dropsub li a{
+	display: block;
+	color: #ccc;
+	line-height: 50px;
+	transition: all 0.5s ease-in;
+}
+.dropsub li a:hover{
+	background:#97c444;
+	color:#fff;
+}

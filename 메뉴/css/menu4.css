@@ -1,0 +1,33 @@
+@import url(common.css);
+
+#nav{}
+#nav ul{
+	width:200px;
+	background:#999;
+}
+#nav ul li{border-bottom:1px dashed #fff;}
+#nav ul li:last-child{border-bottom:none;}
+
+#nav ul li a{
+	display:block;
+	color:#fff;
+	font-size:16px;
+	padding:14px 30px;
+}
+
+#nav ul li a:hover{
+	background:#ffcc00;
+	color:#333;
+	font-weight:bold;	
+}
+
+/*현재 위치 활성화*/
+#nav ul li .active{
+	background:#ffcc00;
+	color:#333;
+	font-weight:bold;	
+}
+
+
+
+

@@ -1,0 +1,86 @@
+@import url(common.css);
+
+body{border-top:15px solid #333;}
+.login{border-top:50px solid #ff6633;}
+
+.login h1{
+	font-size:60px;
+	font-family:arial;
+	color:#c8c8c8;
+	letter-spacing:-3px;   /*글자간격*/
+	text-align:center;
+	margin-top:50px;	
+}
+
+.login fieldset{
+	width:700px;
+	margin:10px auto;
+	padding:50px;
+}
+
+
+/*왼쪽 아이디/비번 */
+.login2{float:left;}
+.login2 .labelstyle{
+	display:inline-block;
+	width:60px; 
+	font-weight:bold; 
+	letter-spacing:-1px	
+}
+.login2 input{
+	width:150px;
+	border:1px solid #999; 
+	margin-bottom:5px;
+	padding:2px;		
+}
+
+
+/*로그인버튼*/
+.login .btnlogin{
+	float:left;
+	width:80px; 
+	height:45px; 
+	background:#ff6633; 
+	border-radius:5px; 
+	color:#fff;
+	margin-left:20px;
+	/*border:0;*/
+	border-style:none;
+}
+.login .btnlogin:hover{
+	background:#999;
+	color:#000;
+	cursor:pointer;
+}
+
+
+
+
+/* 아이디저장/보안접속 */
+.login .btn1{ 
+	clear:both; /*float문제해결->float를 적용한 요소 바로다음에 오는 요소에 직접 적용*/	
+	margin-left:60px;
+	padding:10px 0px;
+}
+
+
+/* 회원가입,아이디비번찾기 */
+.btn2{margin:10px 0 0 60px;} /*상,우,하,좌*/
+.btn2 .btnjoin{
+	background:#999;
+	border-radius:5px;
+	padding:7px;
+	color:#fff;
+	border-style:none;
+}
+.btn2 .btnsearch{
+	background:#ccc;
+	border-radius:5px;
+	padding:7px;
+	border-style:none;
+}
+.btnjoin:hover, .btnsearch:hover{
+	background:#000;
+	color:#fff;
+	cursor:pointer;
+}

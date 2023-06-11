@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>css20-transition속성</title>
+<style>
+
+#ex1,#ex2,#ex3{display:inline-block;} /*하이퍼링크의 영역이 넘치지않게*/
+
+#ex1 div{
+	width:100px;
+	height:100px;	
+	background-color:red;
+	/*transition-property:background,border-radius;->적용할 속성
+	transition-duration:1s; ->재생시간
+	transition-delay:2s; ->지연시간
+	timing-function:ease-in-out; ->탄력함수 */
+
+	transition:all 1s ease-in-out;
+}
+#ex1:hover div{
+	background-color:blue;
+	border-radius:50%;
+	cursor:pointer;
+}
+
+#ex2 div{
+	width:100px;
+	height:100px;
+	border:2px solid #000;
+	background:url(image/f1.png) no-repeat center center;
+	transition:all 1s ease-in;
+}
+#ex2:hover div{
+	border-radius:50px;
+    border:2px solid blue;
+    background:url(image/f2.png) no-repeat center center; 
+	cursor:pointer;
+}
+
+#ex3 div{
+	float:left;
+	width:100px;
+	height:50px;
+	margin:5px 10px;
+	padding:5px;
+	color:#fff;
+	background-color:#006aff;
+	border-radius:5px;
+	text-align:center;
+	font-weight:bold;	
+}
+#ex3:hover div{height:400px;cursor:pointer;}
+
+#ex3 .ease{transition:all 3s ease;}
+#ex3 .linear{transition:all 3s linear;}
+#ex3 .ease-in{transition:all 3s ease-in;}
+#ex3 .ease-out{transition:all 3s ease-out;}
+#ex3 .ease-in-out{transition:all 3s ease-in-out;}
+
+</style>
+</head>
+<body>
+
+<p>도형 위로 마우스 포인터를 올려보세요!</p>
+<div id="ex1">
+	<div></div>
+</div>
+
+<p>배경이미지 넣기</p>
+<div id="ex2">
+	<div></div>
+</div>
+
+<p>timing-function : 트렌지션효과의 곡선형태</p>
+<div id="ex3">
+	<div class="ease">ease</div>
+	<div class="linear">linear</div>
+	<div class="ease-in">ease-in</div>
+	<div class="ease-out">ease-out</div>
+	<div class="ease-in-out">ease-in-out</div>
+</div>
+
+</body>
+</html>
+
+<!--
+*트랜지션이란 한 스타일에서 다른 스타일로 바뀌는 것을 말한다.
+(바뀌는 시간을 조절)
+
+▶transition:property값 duration값 timing-function값 delay값
+
+예)transition:all 1s linear;  ->요소의 모든 부분에 1초동안 linear 적용
+
+*timing-function값
+linear:시작에서 끝까지 똑같은 속도로 트렌지션을 진행한다.
+ease:처음에는 천천히 시작하고 점점 빨라지다가 마지막엔 천천히 끝낸다. 기본값
+ease-in:트렌지션 시작을 느리게 한다.
+ease-out:트렌지션을 느리게 끝낸다.
+ease-in-out:느리게 시작하고 느리게 끝낸다.
+-->

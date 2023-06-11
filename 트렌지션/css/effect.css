@@ -1,0 +1,225 @@
+@import url(common.css);
+
+body{
+	background:#d8eaf8;
+	color:#fff;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#container{
+	width:950px; 
+	margin:0 auto; 
+	text-align:center; 
+	padding:20px 0;
+}
+
+#container>p{ /*자손선택자:부모 #container의 첫번때 나오는 <p>*/
+	color:#999;
+	margin-bottom:50px;
+}
+
+#container .photo{width:inherit;}  /*부모값을 상속받음->950px*/
+#container .photo li{
+	position:relative; /*부모기준설정*/
+	float:left;
+	width:300px;
+	height:250px;
+	margin:0 10px 10px 0;  /*상,우,하,좌*/
+	cursor:pointer;
+}
+
+#container .photo li div{  /*자식설정*/
+	position:absolute;
+	background:#000;
+}
+#container .photo li img{
+	width:100%;
+	height:100%;
+}
+/*img는 inline형식의 태그지만 width,height 등이 적용됨*/
+
+
+/*1번 이미지*/
+#container .photo li .block1{
+	width:100%;
+	height:0;
+	/*background:#000;
+	opacity:0.5;
+	->요소안의 글자도 같이 불투명해짐
+	*/
+	background:rgba(0,0,0,0.5);
+	transition:all 0.5s ease-out;	
+}
+#container .photo li:hover .block1{height:100%;}
+
+#container .photo li .block1 .icon{  /*돋보기아이콘*/
+	font-size:40px;
+	line-height:250px;  /*수직정렬가운데 -높이만큼 설정*/
+	opacity:0;
+	transition:all 0.5s ease;
+}
+#container .photo li:hover .block1 .icon{opacity:1;}
+
+
+/*2번 이미지*/
+#container .photo li .block2{
+	width:100%;
+	height:100%;
+	opacity:0;
+	transition:all 0.5s ease-in;
+}
+#container .photo li:hover .block2{opacity:1;}
+
+#container .photo li .block2 p{
+	text-transform:uppercase;  
+	border:1px solid #fff;
+	width:140px;
+	padding:10px 0;
+	margin:110px auto 0;
+}
+
+
+/*3번 이미지*/
+#container .photo li .block3{
+	width:100%;
+	height:0;
+	transition:all 0.2s;
+}
+#container .photo li:hover .block3{height:50px;}
+
+#container .photo li .block3 p{
+	opacity:0;
+	line-height:50px;
+	transition:all 0.5s;
+}
+#container .photo li:hover .block3 p{opacity:1;}
+
+/*4번 이미지*/
+#container .photo li .block4{
+	width:100%;
+	height:0;
+	bottom:0;
+	transition:all 0.2s;
+}
+#container .photo li:hover .block4{height:50px;}
+
+#container .photo li .block4 p{
+	opacity:0;
+	line-height:50px;
+	transition:all 0.5s;
+}
+#container .photo li:hover .block4 p{opacity:1;}
+
+
+/*5번 이미지*/
+#container .photo li .block5{
+	width:0;
+	height:100%;
+	transition:all 0.5s;
+}
+#container .photo li:hover .block5{width:100%;}
+
+#container .photo li .block5 p{
+	opacity:0;
+	margin-top:110px;
+	transition:all 0.5s;
+}
+#container .photo li:hover .block5 p{opacity:1;}
+
+
+/*6번 이미지*/
+#container .photo li .block6{
+	/*width:0;  ->시작의 중심점이 가운데가 아님
+	height:0;*/
+	width:100%;
+	height:100%;
+	opacity:0;
+	transform:scale(0,0);
+	transition:all 0.5s;
+}
+#container .photo li:hover .block6{
+	transform:scale(1,1);
+	opacity:1;
+}
+
+#container .photo li .block6 p{margin-top:110px;}
+
+
+/*7번 이미지*/
+#container .photo li .block7{
+	/*width:0;  ->시작의 중심점이 가운데가 아님
+	height:0;*/
+	width:100%;
+	height:100%;
+	opacity:1;
+	transform:scale(1,1);
+	transition:all 0.5s;
+}
+#container .photo li:hover .block7{
+	transform:scale(0,0);
+	opacity:0;
+}
+
+#container .photo li .block7 p{margin-top:110px;}
+
+
+/*8번 이미지*/
+#container .photo li:nth-child(8){overflow:hidden;}  /*자식이 부모보다 넘치지않게 하기위함*/
+#container .photo li:nth-child(8) img{transition:all 0.5s;}
+#container .photo li:nth-child(8):hover img{
+	transform:scale(1.4);			
+	filter:blur(4px); /*흐림효과 -> filter속성은 익스플로러에서 적용되지 않음*/
+	-webkit-filter:blur(4px);  /*접두사 필요-크롬*/
+}
+
+
+/*9번 이미지*/
+#container .photo li:nth-child(9){overflow:hidden;}  /*자식이 부모보다 넘치지않게 하기위함*/
+#container .photo li:nth-child(9) img{transition:all 0.5s;}
+#container .photo li:nth-child(9):hover img{
+	transform:scale(1.4);			
+	filter:grayscale(100%); /*흑백효과*/
+	-webkit-filter:grayscale(100%); 
+}
+
+
+/*3개 이미지*/
+
+#container .photo2{
+	width:800px;
+	margin:0 auto;
+	padding:60px;
+}
+
+#container .photo2 li{
+	float:left;
+	width:250px;
+	cursor:pointer;
+	filter:sepia(80%);	
+	transition:all 0.5s ease-out;
+}
+#container .photo2 li:hover{filter:sepia(0);}
+
+#container .photo2 li:nth-child(1) img{transform:rotate(-10deg);}
+#container .photo2 li:nth-child(2) img{transform:rotate(10deg);}
+#container .photo2 li:nth-child(3) img{transform:rotate(-10deg);}
+
+#container .photo2 li img{
+	width:100%;
+	border:5px solid #fff;
+	border-bottom-width:30px;
+	box-shadow:1px 2px 4px rgba(0,0,0,0.1);
+	transition:all 0.5s ease-out;
+}
+#container .photo2 li img:hover{transform:scale(1.4);}
+
+#footer{
+	width:920px; 
+	text-align:center; 
+	padding:30px 0; 
+	margin:0 auto;
+}
+#footer p{
+	color:#666; 
+	font-style:italic;
+}

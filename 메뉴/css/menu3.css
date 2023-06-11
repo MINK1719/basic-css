@@ -1,0 +1,74 @@
+@import url(common.css);
+
+#nav{
+	width: 100%;
+	height: 50px;
+	background: #333;
+	border-top: 5px  solid #ccc;
+	text-align: center;
+	/*자식을 float로 배열한 경우는 상위부모에 "text-align:center;"속성이 적용되지 않음
+	->해결:ul을 "display:inline-block;"속성을 사용하여 바꾼다.*/
+}
+
+
+/*주메뉴*/
+
+/*후손선택자를 사용하면 서브메뉴까지 모두 적용이 됨
+해결->주메뉴만 적용하기 위해 자손선택자(">") 사용*/
+#nav>ul{display: inline-block;}
+#nav>ul>li{
+	float: left;
+	width: 150px;
+	height: 50px;
+	border-right: 1px solid rgba(255,255,255,0.1);
+	color: #ccc;
+}
+#nav>ul>li:first-child{border-left: 1px solid rgba(255,255,255,0.1);}
+#nav>ul>li>a{
+	font-size: 16px;
+	line-height: 50px;  /*수직정렬 가운데*/
+}
+
+#nav>ul>li:hover{/*li에 hover를 적용해야 주메뉴의 현재 위치 활성화가 가능함->서븜뉴로 마우스가 내려가도 주메뉴의 오버가 활성화되어 있음*/
+	background: #96c444;
+	color: #333;
+	font-weight: bold;
+}
+/*#nav>ul>li>a:hover{
+	color: #333;
+	font-weight: bold;
+	background: #97c444;
+}
+*/
+/*-------주메뉴 오버시 block형태로 서브메뉴 나옴*/
+#nav>ul>li:hover ul{display: block;}
+
+
+/*서브메뉴*/
+
+#nav>ul>li ul{display: none;position: relative;} /*서브메뉴 숨기기*/
+
+#nav>ul>li ul li{
+	float: left;
+	height: 50px;
+	background: #333;
+	width: 120px;
+	height: 50px;
+}
+
+#nav>ul>li ul li a{
+	display: block;
+	color: #ccc;
+	line-height: 50px;
+}
+#nav>ul>li ul li a:hover{
+	background:#97c444;
+	color:#fff;
+}
+
+/*서브메뉴가 부모를 벗어나서 전체가로크기&위치 설정하기*/
+
+#nav>ul>li .sub1{width: 800px;left: -50px;}
+#nav>ul>li .sub2{width: 800px;left: -80px;}
+#nav>ul>li .sub3{width: 800px;left: -70px;}
+#nav>ul>li .sub4{width: 800px;left: -40px;}

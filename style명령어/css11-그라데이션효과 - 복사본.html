@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>css11-그라데이션효과</title>
+<style>
+/*
+새로운 css3 속성을 지원하지않는 브라우저에서 접두사를 붙여 식별할수 있도록 한다.
+
+-webkit-(크롬, 사파리 등)
+-moz-(모질라, 파이어폭스 등)
+-o-(오페라)
+-ms-(익스플로러)
+*/
+
+body{
+	background:-webkit-linear-gradient(to bottom,skyblue,white 50%);
+	background:-moz-linear-gradient(to bottom,skyblue,white 50%);
+	background:-o-linear-gradient(to bottom,skyblue,white 50%);
+	background:-ms-linear-gradient(to bottom,skyblue,white 50%);
+	background:linear-gradient(to bottom,skyblue,white 50%);
+	background-attachment:fixed;
+}
+
+.box1{
+	width:400px;
+	height:200px;
+	background-color:#f00; /*그라데이션을 지원하지않는 브라우저를 위한 배경지정*/
+	background:linear-gradient(45deg,#f00,#fff);
+}
+.box2{
+	width:400px;
+	height:200px;
+	background-color:blue; /*그라데이션을 지원하지않는 브라우저를 위한 배경지정*/
+	background:linear-gradient(to bottom,blue,white);
+}
+.box3{
+	width:400px;
+	height:200px;
+	background-color:blue; /*그라데이션을 지원하지않는 브라우저를 위한 배경지정*/
+	background:linear-gradient(150deg,blue,white,yellow);
+}
+.box4{
+	width:400px;
+	height:200px;
+	background-color:blue; /*그라데이션을 지원하지않는 브라우저를 위한 배경지정*/
+	background:radial-gradient(circle,white,blue);	
+}
+
+/*지원하는 사이트에서 복사해오기*/
+.box5{
+	width:400px;
+	height:200px;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffb76b+0,31ce9c+27,283ba8+45,5eafba+71,ad2955+100,ff7f04+100 */
+background: #ffb76b; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #ffb76b 0%, #31ce9c 27%, #283ba8 45%, #5eafba 71%, #ad2955 100%, #ff7f04 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  #ffb76b 0%,#31ce9c 27%,#283ba8 45%,#5eafba 71%,#ad2955 100%,#ff7f04 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  #ffb76b 0%,#31ce9c 27%,#283ba8 45%,#5eafba 71%,#ad2955 100%,#ff7f04 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb76b', endColorstr='#ff7f04',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+}
+
+</style>
+</head>
+<body>
+<div class="box1"><h2>선형그라데이션</h2></div>
+<div class="box2"><h2>선형그라데이션</h2></div>
+<div class="box3"><h2>선형그라데이션</h2></div>
+<div class="box4"><h2>원형그라데이션</h2></div>
+<div class="box5"><h2>Gradient Generator</h2></div>
+
+</body>
+</html>
+
+<!--
+linear-gradient(45deg, #f85032 0%, #e73827 100%) ->선형
+                 각도  색상  위치     색상  위치
+				 
+*선형그라데이션 위치값
+to top(아래에서 시작하여 위로 그라데이션이 만들어짐)
+to left(오른쪽에서 시작하여 왼쪽으로 그라데이션이 만들어짐)
+to right(왼쪽에서 시작하여 오른쪽으로 그라데이션이 만들어짐)
+to bottom(위에서 시작하여 아래로 그라데이션이 만들어짐)
+ 
+radial-gradient(위치,모양(및크기),색상...) ->원형
+-->

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>css17-선택자</title>
+<style>
+/*#select1 h1{color:red;} ->후손선택자(선택자 태그아래에 위치한 모든 태그)*/
+#select1>h1{color:red;}  /*자손선택자(선택자 바로 한단계 아래에 위치한 태그)*/
+
+#select2 h1:first-of-type{color:red;}  /*h1태그중 첫번째*/
+#select2 h2:first-of-type{color:orange;} /*h2태그중 첫번째*/
+#select2 h3:first-of-type{color:blue;} /*h3태그중 첫번째*/
+#select2 h3:last-of-type{color:green;} /*h3태그중 마지막번째*/
+#select2 h2:nth-of-type(2){color:skyblue;} /*h2태그중 앞에서 2번째*/
+#select2 h3:nth-of-type(3){color:pink;} /*h3태그중 앞에서 3번째*/
+#select2 h3:nth-last-of-type(2){color:gray;} /*h3태그중 뒤에서 2번째*/
+
+.list{overflow:hidden;}  /*float문제 해결*/
+.list ul li{
+	list-style-type:none;
+	float:left;
+	/*display:inline;->가로배치는 가능하나 사이의 기본간격이 생긴다.*/
+	padding:10px;
+} 
+.list ul li:nth-child(2n){background-color:pink;} /*2,4,6...짝수(even)*/
+.list ul li:nth-child(2n+1){background-color:purple;color:#fff;} /* 1,3,5...홀수(odd)*/
+.list ul li:first-child{border-radius:15px 0 0 15px}
+.list ul li:last-child{border-radius:0 15px 15px 0}
+
+
+.box{}
+.box p:first-letter{font-size:300%;color:red;}  /*p태그 안의 첫 글자는 글자크기 세배로*/
+.box p{border-bottom:1px dashed #000;}
+.box:before{content:"box의 맨앞에 문장을 삽입한다.";color:green;}
+.box:after{content:"box의 맨뒤에 문장을 삽입한다.";color:orange;}
+
+#select4 p:nth-child(3){color:red;font-weight:bold;}   /*일반구조선택자*/
+#select4 p:nth-of-type(3){color:green;font-weight:bold;} /*형태구조선택자*/
+
+/*
+nth-child 일반구조선택자는 
+부모요소의 모든 자식요소를 대상으로 n번째 자식을 선택하고,
+
+nth-of-type 형태구조선택자는 부모요소의 특정 요소만을 대상으로 n번째 자식을 선택한다.
+*/
+
+
+#select5 h1+h2{color:red;}
+/* h1태그의 바로 뒤에 위치하는 h2태그의 color 속성에 red를 적용 */
+
+#select5 h1~h2{background-color:orange;}
+/* h1태그의 뒤에 위치하는 h2태그의 background속성에 orange를 적용*/
+
+/*input{background-color:yellow;}
+->input선택자에 적용하면 input의 모든 type에 적용됨
+*/
+
+input[type=text]{background-color:red;width:100px;}
+input[type=password]{background-color:blue;width:300px;}
+
+</style>
+</head>
+<body>
+
+<h1>자손후손선택자</h1>
+<div id="select1">
+	<h1>Lorem ipsum</h1>
+	<h1>Lorem ipsum</h1>
+	<div id="nav">
+		<h1>Navigation</h1>
+		<h1>Navigation</h1>
+		<h1>Navigation</h1>
+	</div> 
+</div>
+<hr>
+
+<h1>형태구조 선택자</h1>
+<div id="select2">
+	<h1>Header - 1</h1>
+	<h2>Header - 2</h2>
+	<h2>Header - 2</h2>
+	<h2>Header - 2</h2>
+	<h3>Header - 3</h3>
+	<h3>Header - 3</h3>
+	<h3>Header - 3</h3>
+	<h3>Header - 3</h3>
+	<h3>Header - 3</h3>
+	<h2>Header - 2</h2>
+	<h1>Header - 1</h1>
+</div>
+<hr>
+
+<h1>일반구조 선택자</h1>
+<div id="select3">
+	<div class="list">
+	    <ul>
+			<li>First</li>
+			<li>Second</li>
+			<li>Third</li>
+			<li>Fourth</li>
+			<li>Fifth</li>
+			<li>Sixth</li>
+			<li>Seventh</li>
+		</ul>	
+	</div>
+
+	<div class="box">
+	  	<p>COMPANY</p>
+	  	<p>PRODUCT</p>
+	  	<p>SERVICE</p>
+	</div>
+</div>
+<hr>
+
+<h1>일반과형태 구조선택자의차이</h1>
+<div id="select4">
+	<p>구조선택자</p>
+	<span></span>
+	<p>구조선택자</p> <!-- p:nth-child(3)일반구조 ->중간에 있는 <sapn>까지 포함해서 3번째임--> 
+	<span></span>
+	<p>구조선택자</p> <!-- p:nth-of-type(3)형태구조 ->선택된 <p>중에서 3번째임--> 
+</div>
+<hr>
+
+<h1>동위선택자</h1>
+<div id="select5">
+	<h1>Header - 1</h1>
+	<h2>Header - 2</h2>
+	<h2>Header - 2</h2>
+	<h2>Header - 2</h2>
+	<h2>Header - 2</h2>
+	<h3>Header - 3</h3>
+	<h2>Header - 2</h2>
+</div>
+<hr>
+
+<h1>기본속성선택자:선택자[속성=값]</h1>
+<form>
+	<input type="text">
+	<input type="password">
+</form>
+
+</body>
+</html>

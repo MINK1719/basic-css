@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>css12-표그룹을 이용한 css적용</title>
+<style>
+caption{
+	color: red;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+thead{background-color: green;color: #fff;}
+tfoot{background-color: orange;font-size: 20px;}
+
+.col1{background-color: red;}
+.col2{background-color: blue;}
+.col3{background-color: skyblue;}
+
+</style>
+</head>
+<body>
+<table border="1px">
+<caption>표의 제목</caption> <!-- 표제목 -->
+<!-- 표의 행그룹
+<thead>~</thead>:표의 머리
+<tbody>~</tbody>:표의 본문
+<tfoot>~</tfoot>:표의 꼬리
+ -->
+
+<!--표의 열그룹-->
+<colgroup>
+		<col class="col1"> <!--표의 5열중 1열-->
+		<col span="3" class="col2"> <!--표의 5열중 2~4열-->
+		<col class="col3"> <!--표의 5열중 5열-->
+</colgroup>
+
+	<thead> <!-- 표의 머리 -->
+		<tr>
+			<th>Table Header</th>
+			<th>Table Header</th>
+			<th>Table Header</th>
+			<th>Table Header</th>
+			<th>Table Header</th>
+		</tr>
+	</thead>
+
+	<tbody> <!-- 표의 본문 -->
+		<tr>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+		</tr>
+		<tr>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+		</tr>
+		<tr>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+		</tr>
+		<tr>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+		</tr>
+		<tr>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+		</tr>
+		<tr>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+		</tr>
+		<tr>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+		</tr>
+		<tr>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+		</tr>
+		<tr>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+		</tr>
+		<tr>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+			<td>Table Data</td>
+		</tr>
+	</tbody>
+
+	<tfoot> <!-- 표의 꼬리 -->
+		<tr>
+			<td>Table Footer</td>
+			<td>Table Footer</td>
+			<td>Table Footer</td>
+			<td>Table Footer</td>
+			<td>Table Footer</td>
+		</tr>
+	</tfoot>
+</table>
+</body>
+</html>

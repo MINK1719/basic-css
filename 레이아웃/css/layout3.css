@@ -1,0 +1,118 @@
+@import url(common.css);
+
+/* ========== Header ========== */
+
+#header{   /*큰부모->가로100%로 사용(가로가 100%일때는 margin:0 auto 가 적용되지않음*/
+	width:100%;	
+	height:150px;
+	background:#f46075;
+}
+
+.header_in{  /*작은부모->실제 컨텐츠크기를 정하고 가운데정렬*/
+	width:1000px;
+	margin:0 auto;
+}
+/*가로가 100%이면서 배경색 또는 배경패턴등을 적용하고자 할때는
+컨텐츠를 감싸는 부모를 2개 만들어준 후, 
+큰부모는 100%와 배경을 설정하고 작은부모는 실제 컨텐츠의 가로폭과 가운데정렬을 설정한다.*/
+
+.top_nav{float:left;}
+.header_in h1{float:right;}
+
+.top_nav ul li{
+	float:left;
+	/*margin-top:80px;
+	margin-left:20px;*/
+	margin:80px 0 0 20px;
+	padding:0 15px;
+}
+
+.top_nav ul li a{
+	font-weight:bold;
+	color:#fff;
+	font-size:16px;
+	padding:10px;
+	transition:all 0.5s;
+}
+.top_nav ul li a:hover{
+	background:#fcbdc6;
+	color:#a72134;
+	border-radius:20px;
+}
+
+
+/* ========== Section ========== */
+
+#contain{
+	width:1000px;
+	margin:20px auto;	
+}
+
+
+/*컨텐츠영역-왼쪽*/
+.left_content{
+	width:650px;  
+	float:left;
+}
+.left_content h2{
+	font-size:24px;
+	margin:10px 0;
+	border:solid #ffcc00;
+	border-width:0 0 0 5px; /*상,우,하,좌*/
+	padding-left:10px;
+}
+
+.left_content h3{
+	font-family:돋움;
+	font-size:16px;
+	margin-bottom:15px;
+	font-weight:bold;
+}
+.left_content p{
+	font-family:돋움;
+	line-height:18px;
+	font-size:12px;
+}
+
+.box1,.box2,.box3,.box4{
+	float:left;
+	width:280px;
+	height:210px;
+	border:2px solid #ccc;
+	margin:10px;
+	padding:10px;
+	cursor:pointer;
+	transition:all 2s;
+}
+
+.box1:hover{background-color:#cf9;border:2px solid green;}
+.box2:hover{background-color:#a2d0ff;border:2px solid blue;}
+.box3:hover{background-color:#ebcbfe;border:2px solid purple;}
+.box4:hover{background-color:#fc3;border:2px solid red;}
+
+
+/*컨텐츠영역-오른쪽*/
+
+.right_side{
+	width:200px;
+	float:right;
+	border:2px solid #ccc;
+	margin:55px 20px 20px 0px;  /*상,우,하,좌*/
+	padding:10px;
+	text-align:center;
+}
+.right_side ul li{padding:2px 0;}
+
+
+/* ========== Footer ========== */
+
+#footer{
+	width:100%;
+	margin:0 auto;
+	background:#333;
+}
+#footer p{
+	padding:30px;
+	text-align:center;
+	color:#fff;
+}

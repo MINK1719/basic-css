@@ -1,0 +1,94 @@
+@import url(common.css);
+
+/* ========== Header ========== */
+
+#header{
+	width:100%;
+	border-top:5px solid #ccc;
+}
+/*#header img{text-align:center;} ->img태그에 직접 속성을 넣는것은 적용되지 않음.
+=>text-align 속성은 텍스트의 정렬을 하는 명령이므로, 
+img 태그는 <p>,<div>로 감싸주어 텍스트 같은 형태를 만들어서 적용하는것이 좋음.
+*/
+
+#header .logo{
+	text-align:center;
+	margin:100px 0;
+}
+
+
+/*탑메뉴*/
+.nav{
+	width:100%;
+	height:50px;
+	background:#ccc;
+	text-align:center;
+	/*->자식을 float로 배열할 경우 적용되지 않음.
+해결->nav에 설정한 정렬을 적용시키기 위해서 ul을 blcok->inline-block으로 변경*/	
+}
+.nav ul{display:inline-block;}
+.nav ul li{float:left;}
+.nav ul li a{
+	color:#333;
+	font-size:16px;
+	padding:15px 70px;
+}
+.nav ul li a:hover{
+	background:#333;
+	color:#ffcc00;
+}
+
+
+/* ========== Section ========== */
+
+#section{
+	width:1050px;
+	margin:20px auto; 
+}
+
+#section .article{
+	float:left;
+	width:680px;
+	height:600px; 
+	border:1px solid #ccc;
+	padding:10px;
+
+}
+#section .aside{
+	float:right;
+	width:310px;
+	height:600px; 
+	border:1px solid #ccc;
+	padding:10px;
+}
+#section h3{
+	font-size:18px;
+	margin:10px 0;
+	text-align:center;	
+}
+#section p{
+	font-size:13px;
+	color:#333;
+	line-height:20px;
+	padding:0 20px;
+}
+
+
+/* ========== Footer ========== */
+
+#footer{
+	width:100%;
+	height:70px;
+	border-top:1px solid #ccc;
+	padding-top:20px;
+	text-align:center;
+}
+#footer .add{color:#333;}
+#footer .copy{
+	color:#666;
+	margin-top:8px;
+}
+#footer .bd{
+	font-weight:bold;
+	color:#cc0033;
+}

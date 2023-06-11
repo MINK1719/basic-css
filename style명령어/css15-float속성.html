@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>css15-float속성</title>
+<style>
+#row1{
+	width:500px;
+	border:5px solid #999;
+	margin:20px auto;  /*요소의 가운데정렬*/
+	overflow:hidden;
+	/*해결방법1.....
+	자식이 모두 float를 적용하면 부모가 높이를 인식하지 못하는 문제 발생
+	->folat를 적용한 자식의 부모에게 "overflow:hidden;"을 적용함
+	*/
+}
+#row1 #box01{
+	width:100px;
+	height:100px;
+	border:1px solid #999;
+	margin:5px;
+	padding:5px;
+	float:left;
+}
+#row1 #box02{
+	width:100px;
+	height:100px;
+	border:1px solid #999;
+	margin:5px;
+	padding:5px;
+	float:left;	
+}
+
+/* 해결방법2.....
+자식이 모두 float를 적용하면 부모가 높이를 인식하지 못하는 문제 발생
+->맨뒤에 float가 해지된 내용이 없는 빈 자식을 만든 후 부모에게 적용한다.*/
+
+.clear:after{  /*맨뒤*/ 
+	content:"";  /*내용이 없음*/
+	display:block;  /*block의 성질을 가지고 있는 자식을 만듬*/
+	clear:both;   /*float의 left,right 모두 해제*/
+}
+
+#row2{
+	width:500px;
+	border:5px solid #999;
+	margin:20px auto;  /*요소의 가운데정렬*/
+}
+#row2 #box01{
+	width:100px;
+	height:100px;
+	border:1px solid #999;
+	margin:5px;
+	padding:5px;
+	float:left;
+}
+#row2 #box02{
+	width:100px;
+	height:100px;
+	border:1px solid #999;
+	margin:5px;
+	padding:5px;
+	float:right;	
+}
+
+</style>
+</head>
+<body>
+
+<div id="row1">
+	<div id="box01">box01</div>
+	<div id="box02">box02</div>
+</div>
+
+<div id="row2" class="clear"> <!--위에서 만든 빈자식의 클래스를 불러온다.-->
+	<div id="box01">box01</div>
+	<div id="box02">box02</div>
+	<!--위에서 만든 클래스(.clear)에서 float가 해제된 내용이 없는 빈 자식이 만들어짐-->
+</div>
+
+</body>
+</html>
